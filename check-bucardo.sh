@@ -2,7 +2,7 @@
 
 # Define the name of your Docker container
 CONTAINER_NAME="bucardo-container"
-BUCARDO_DIRECTORY=/bucardo
+BUCARDO_DIRECTORY=/sarsabad-cron/bucardo
 
 
 echo $BUCARDO_DIRECTORY
