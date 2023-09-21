@@ -2,8 +2,10 @@
 
 # Define the name of your Docker container
 CONTAINER_NAME="bucardo-container"
-BUCARDO_DIRECTORY=/home/farhad/Projects/postgres-replication/bucardo/bucardo
+BUCARDO_DIRECTORY=/bucardo
 
+
+echo $BUCARDO_DIRECTORY
 log_timestamp() {
     echo "$(date +"%Y-%m-%d %H:%M:%S") $1"
 }
@@ -11,7 +13,7 @@ log_timestamp() {
 # Check if the container is running
 if ! docker ps --format "{{.Names}}" | grep -q "$CONTAINER_NAME"; then
     log_timestamp "Container $CONTAINER_NAME is not running. Starting it..."
-    cd "$BUCARDO_DIRECTORY" && sh run.sh
+    sh $BUCARDO_DIRECTORY/run.sh
 else
     log_timestamp "Container $CONTAINER_NAME is already running."
 fi
