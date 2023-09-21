@@ -4,4 +4,28 @@ services:
       build: .
       container_name: bucardo-container
       restart: always
-      command: ""
+      environment:
+        # SOURCE
+        - SOURCE_HOST
+        - SOURCE_PORT
+        - SOURCE_USERNAME
+        - SOURCE_PASSWORD
+        - SOURCE_DATABASE
+        - SOURCE_BUCARDO_DB
+        - SOURCE_TO_TARGET_TABLES
+        - SOURCE_TO_TARGET_COPY_MECHANISM
+        - SOURCE_TO_TARGET_DBS
+        # TARGET
+        - TARGET_HOST
+        - TARGET_PORT
+        - TARGET_USERNAME
+        - TARGET_PASSWORD
+        - TARGET_DATABASE
+        - TARGET_BUCARDO_DB
+        - TARGET_TO_SOURCE_TABLES
+        - TARGET_TO_SOURCE_COPY_MECHANISM
+        - TARGET_TO_SOURCE_DBS
+        # BUCARDO
+        - BUCARDO_GROUP
+        - BUCARDO_SYNC_SOURCE_TO_TARGET
+        - BUCARDO_SYNC_TARGET_TO_TARGET
