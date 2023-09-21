@@ -13,7 +13,7 @@ log_timestamp() {
 # Check if the container is running
 if ! docker ps --format "{{.Names}}" | grep -q "$CONTAINER_NAME"; then
     log_timestamp "Container $CONTAINER_NAME is not running. Starting it..."
-    sh $BUCARDO_DIRECTORY/run.sh
+    cd $BUCARDO_DIRECTORY && sh run.sh
 else
     log_timestamp "Container $CONTAINER_NAME is already running."
 fi
