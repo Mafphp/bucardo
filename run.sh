@@ -7,7 +7,7 @@ docker compose run --name bucardo-container --rm -d bucardo \
     -b 'add relgroup ${BUCARDO_GROUP}' \
     -b 'add all tables db=${SOURCE_BUCARDO_DB} relgroup=${BUCARDO_GROUP}' \
     -b 'add all sequences db=${SOURCE_BUCARDO_DB} relgroup=${BUCARDO_GROUP}' \
-    -b 'add sync ${BUCARDO_SYNC_SOURCE_TO_TARGET} dbs=${SOURCE_TO_TARGET_DBS} tables=${SOURCE_TO_TARGET_TABLES} onetimecopy=${SOURCE_TO_TARGET_COPY_MECHANISM}' \
+    -b 'add sync ${BUCARDO_SYNC_SOURCE_TO_TARGET} dbs=${SOURCE_TO_TARGET_DBS} tables=${SOURCE_TO_TARGET_TABLES} --exclude-table=${SOURCE_TO_TARGET_EXCLUDE_TABLES} onetimecopy=${SOURCE_TO_TARGET_COPY_MECHANISM}' \
     -b 'activate ${BUCARDO_SYNC_SOURCE_TO_TARGET}'
     # -b 'add sync ${BUCARDO_SYNC_TARGET_TO_SOURCE} dbs=${TARGET_TO_SOURCE_DBS} tables=${TARGET_TO_SOURCE_TABLES} onetimecopy=${TARGET_TO_SOURCE_COPY_MECHANISM}' \
     # -b 'activate ${BUCARDO_SYNC_TARGET_TO_SOURCE}'
